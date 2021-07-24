@@ -1,0 +1,202 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Pattaya&display=swap');
+:root{ --main-color: #e74c3c; }
+
+body{
+    font-family: 'Pattaya', sans-serif;
+    background-color: #E8CEBF;
+    text-align: center;
+    margin:0;
+    overflow: hidden;
+
+}
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(179, 102, 102),rgb(167, 116, 167));
+    clip-path: circle(30% at right 70%);
+}
+body::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#ee39c7,#f0aac1);
+    clip-path: circle(20% at 10% 10%);
+    
+}  
+
+.product-image{
+    margin-top: 90px;
+    margin-left: 450px;
+}
+.fa-heart{
+    color:red;
+}
+.loveme{
+    width: 490px;
+     height: 490px;
+    background-image: url(../img/4.gif);
+    border-radius : 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor:pointer;
+    box-shadow: 0 14px 20px rgba(0,0,0,0.25);
+    overflow: hidden;
+    position:relative;
+    z-index: 1;
+}
+.loveme .fa-heart{
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+
+    animation-name: myheart;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+}
+@keyframes myheart {
+    to{
+        transform: translate(-50%, -50%) scale(10);
+        opacity: 0;
+    }
+
+} 
+
+.product-image .product-trend-label,
+.product-image .product-discount-label{
+    content: "";
+    color: #fff;
+    background-color: #2ecc71;
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: 700;
+    text-align: center;
+    border-radius:5px;
+    text-transform: uppercase;
+    padding: 0 7px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 3;
+}
+.product-image .product-discount-label{
+    background-color: var(--main-color);
+    left: auto;
+    right: 12px;
+}
+.social {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: 4;
+}
+.social li {
+    margin: 0 0 12px;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: transform .3s ease-out 0s;
+}
+.social li i{
+    color: rgb(247, 9, 168);
+     font-size:xx-large;
+}
+.social li i:hover{
+    color: red;
+}
+.product-image:hover .social li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.product-image:hover .social li:nth-child(2){ transition-delay: 0.1s; }
+.product-image:hover .social li:nth-child(3){ transition-delay: 0.2s; }
+.product-image:hover .social li:nth-child(4){ transition-delay: 0.3s; }
+.product-image .social li a {
+    color: #fff;
+    font-size: 22px;
+    transition: all 0.3s;
+}
+.product-image .social li a:hover { color: var(--main-color) }
+.product-image .social li a:before,
+ .product-image .social li a:after{
+    content: attr(data-tip);
+    color: #000;
+    background: #fff;
+   
+    /* font-size: 16px; */
+    padding: 5px 10px;
+    margin-left: 12px;
+    white-space: nowrap;
+    display: none;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transition: all 0.3s;
+}
+.product-image .social li a:after{
+    content: '';
+    background: linear-gradient(-45deg, #fff 49%, transparent 50%);
+    width: 10px;
+    height: 10px;
+    top: 40%;
+    left: 20px;
+    
+}
+.product-image .social li a:hover:before,
+.product-image .social li a:hover:after{
+      display: block;
+}
+.select{
+    width: 100%;
+    height: 300px;
+    background:rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 3px solid rgba(255, 255, 255, 0.5);
+    border-right: 3px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 1000px;
+    overflow-y: scroll;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 40px;
+   transition: 0.5s;
+    overflow-y: auto;
+   z-index: 1;
+}
+.select.display{
+   top: 250px;
+    z-index: 1;
+}
+
+
+
+@media only screen and (max-width:990px){
+   
+    .product-image{
+        margin-top: 80px;
+        margin-left: 90px;
+    }
+    .loveme{
+    
+        width:300px;
+        height: 440px;
+         z-index: 1;
+         margin: 0;
+    }
+   
+}
+
+
